@@ -52,5 +52,5 @@ Runs the client and server concurrently.
 
 This project is inspired by 2 challenges on Frontend Mentor:
 
-- [E-commerce product page](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6): For the product details page and the color palette of the app
-- [Audiophile e-commerce website](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx): For the layout of the the checkout page
+- [E-commerce product page](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6): For the product details page and the main color palette of the app
+- [Audiophile e-commerce website](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx): For the layout of the footer and the checkout page

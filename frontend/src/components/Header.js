@@ -10,10 +10,8 @@ import { navItems } from '../data';
 import logo from '../assets/logo.svg';
 import CartPopup from './CartPopup';
 
-function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
+function Header({ openMenu, setOpenMenu }) {
   const [openCart, setOpenCart] = useState(false);
-
   const { pathname } = useLocation();
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -48,16 +46,14 @@ function Header() {
           </Link>
 
           <ul
-            className={`${
-              !openMenu
-                ? 'hidden'
-                : 'absolute top-16 left-0 w-screen h-screen flex flex-col items-center z-40 bg-white text-sneakers-blue-dark text-center font-bold p-8'
-            } md:flex justify-start items-start gap-2`}
+            className={`fixed top-16 left-0 bottom-0 right-0 md:static flex flex-col md:flex-row justify-start items-center md:items-start gap-2 bg-white text-sneakers-blue-dark text-center font-bold md:font-normal p-8 md:p-0 z-40 ${
+              !openMenu && '-translate-x-full md:translate-x-0'
+            } transition-transform duration-300`}
           >
             {navItems.map((item) => (
               <li
                 key={item.name}
-                className={`hover:text-sneakers-orange transition-colors ${
+                className={`hover:text-sneakers-orange transition-all ${
                   openMenu && 'w-3/4 py-2 border-b'
                 } ${
                   pathname.includes(item.path)

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
@@ -9,10 +10,16 @@ import Checkout from './pages/Checkout';
 import Success from './pages/Success';
 
 function App() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
-    <div className='h-screen flex flex-col justify-start gap-4 font-KumbhSans'>
+    <div
+      className={`h-screen flex flex-col justify-start gap-4 font-KumbhSans ${
+        openMenu && 'overflow-y-hidden md:overflow-y-auto'
+      }`}
+    >
       <Router>
-        <Header />
+        <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/:categoryName' element={<Category />} />

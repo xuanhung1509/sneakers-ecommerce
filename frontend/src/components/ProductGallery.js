@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { useSwiper } from 'swiper/react';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
 function ProductGallery({ images }) {
   return (
@@ -27,6 +28,11 @@ function ProductGallery({ images }) {
     </Swiper>
   );
 }
+
+ProductGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+};
+
 export default ProductGallery;
 
 export function CustomNavigation() {

@@ -4,6 +4,7 @@ import { markOrderSuccess } from '../features/cart/cartSlice';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import PropTypes from 'prop-types';
 
 function PaypalContainer({ disableButton, orderData }) {
   const PAYPAL_CLIENT_ID = process.env.REACT_APP_PAYPAL_CLIENT_ID;
@@ -67,4 +68,10 @@ function PaypalContainer({ disableButton, orderData }) {
     </PayPalScriptProvider>
   );
 }
+
+PaypalContainer.propTypes = {
+  disableButton: PropTypes.bool.isRequired,
+  orderData: PropTypes.array,
+};
+
 export default PaypalContainer;

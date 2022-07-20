@@ -9,6 +9,7 @@ import {
 import { navItems } from '../data';
 import logo from '../assets/logo.svg';
 import CartPopup from './CartPopup';
+import PropTypes from 'prop-types';
 
 function Header({ openMenu, setOpenMenu }) {
   const [openCart, setOpenCart] = useState(false);
@@ -100,4 +101,10 @@ function Header({ openMenu, setOpenMenu }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  openMenu: PropTypes.bool.isRequired,
+  setOpenMenu: PropTypes.func.isRequired,
+};
+
 export default Header;

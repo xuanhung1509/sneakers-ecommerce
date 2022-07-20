@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeQty, removeFromCart } from '../features/cart/cartSlice';
 import { toast } from 'react-hot-toast';
 import { BiTrash } from 'react-icons/bi';
+import PropTypes from 'prop-types';
 
 function CartPopup({ cartItems, setOpenCart }) {
   const dispatch = useDispatch();
@@ -99,4 +100,10 @@ function CartPopup({ cartItems, setOpenCart }) {
     </div>
   );
 }
+
+CartPopup.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+  setOpenCart: PropTypes.func.isRequired,
+};
+
 export default CartPopup;

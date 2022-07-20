@@ -3,6 +3,7 @@ import { Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/thumbs';
+import PropTypes from 'prop-types';
 
 function ProductThumbsGallery({ images }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -51,4 +52,9 @@ function ProductThumbsGallery({ images }) {
     </div>
   );
 }
+
+ProductThumbsGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+};
+
 export default ProductThumbsGallery;

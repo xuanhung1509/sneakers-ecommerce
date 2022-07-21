@@ -143,7 +143,8 @@ function Checkout() {
         500
       );
     }
-  }, [cartItems, userInfo]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cartItems]);
 
   // Get order summary (subtotal & shipping)
   useEffect(() => {
